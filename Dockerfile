@@ -1,10 +1,10 @@
-FROM debian:latest
+FROM debian:8
 MAINTAINER Darren Williams <support@directvoip.co.uk>
 
 # Install Required Dependencies
 RUN apt-get update \
 	&& apt-get upgrade -y \
-	&& apt=get install -y wget
+	&& apt-get install -y wget
 RUN wget -O - https://raw.githubusercontent.com/fusionpbx/fusionpbx-install.sh/master/debian/pre-install.sh | sh \
 && cd /usr/src/fusionpbx-install.sh/debian && ./install.sh
 USER root
