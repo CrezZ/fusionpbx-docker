@@ -4,7 +4,9 @@ MAINTAINER Darren Williams <support@directvoip.co.uk>
 # Install Required Dependencies
 RUN apt-get update \
 	&& apt-get upgrade -y \
-RUN wget https://raw.githubusercontent.com/fusionpbx/fusionpbx-install.sh/master/install.sh -O install.sh && sh install.sh
+	&& apt=get install -y wget
+RUN wget -O - https://raw.githubusercontent.com/fusionpbx/fusionpbx-install.sh/master/debian/pre-install.sh | sh \
+&& cd /usr/src/fusionpbx-install.sh/debian && ./install.sh
 USER root
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY start-freeswitch.sh /usr/bin/start-freeswitch.sh
