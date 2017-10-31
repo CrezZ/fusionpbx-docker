@@ -1,10 +1,11 @@
-![alt text][logo]
-[logo]: https://raw.githubusercontent.com/fusionpbx/fusionpbx-docs/master/source/_static/images/logo.png "FusionPBX Logo"
-
-Welcome to FusionPBX Docker
+FusionPBX+FreeSwitch Docker
 =========================
 
-This probably no longer works!
+CHanges from fork:
+
+Dockerfile.old Using debian:8
+Dockerfile: Using wget https://raw.githubusercontent.com/fusionpbx/fusionpbx-install.sh/master/install.sh -O install.sh && sh install.sh
+
 
 Usage
 -----
